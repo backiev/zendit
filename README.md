@@ -1,2 +1,3 @@
 # zendit
-page for practice
+
+https://backiev.github.io/zendit/dist/
