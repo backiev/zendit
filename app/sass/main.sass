@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap')
 
 // Vars 
-$color-blue: #172F53;
-$color-grey: #7D7D7D;
-$color-privacy: #21D8E3;
+$color-blue: #172F53
+$color-grey: #7D7D7D
+$color-privacy: #21D8E3
+
+$fnt-sz: 20px
+$border-rds: 10px
+
+$padding: 10px
+$margin: 10px
 
 $size-sm: 576px
 $size-md: 768px
@@ -20,14 +26,19 @@ body
 	overflow-x: hidden
 	background: #E5E5E5
 
+section 
+	margin-bottom: 150px
+
 // Custom class
 .container 
 	max-width: 1100px
 	margin: 0 auto
-	padding: 15px
+	padding: $padding*1.5
 
 .d-flex 
 	display: flex
+.column
+	flex-flow: column nowrap
 .justify-between
 	justify-content: space-between
 .align-center 
@@ -37,8 +48,8 @@ body
 	border: 1px solid #000000
 	background: none
 	box-sizing: border-box
-	border-radius: 10px
-	padding: 10px 25px
+	border-radius: $border-rds
+	padding: $padding $padding*2.5
 	color: $color-blue
 	transition: .5s ease
 	outline: none
@@ -48,28 +59,29 @@ body
 .button:active 
 	background: lighten(#000,80%)
 .button-privacy 
-	padding: 15px 44px !important
+	padding: $padding*1.5 $padding*4.5 !important
 	background: $color-privacy
 	color: white
 	border: none
 .button-privacy:active 
 	background: darken($color-privacy, 10%) !important
+
 .text 
 	font-weight: normal
-	font-size: 20px
+	font-size: $fnt-sz
 	line-height: 45px
 	color: $color-grey
 
 .title 
 	font-weight: bold
-	font-size: 52px
+	font-size: $fnt-sz*2.5
 	line-height: 78px
 	text-align: center
 	color: $color-blue
-	margin: 10px 0
+	margin: $margin 0
 	padding: 0
 	@media screen and (max-width: $size-sm)
-		font-size: 40px
+		font-size: $fnt-sz*2
 
 .h-100 
 	min-height: 100%
@@ -78,22 +90,20 @@ body
 	cursor: pointer
 	display: none
 	transition: .3s ease
-
 .burger-right
 	margin-right: 40%
-
 .burger div 
 	width: 25px 
 	height: 5px
 	background: $color-blue
-	border-radius: 30px
-	margin-bottom: 3px
+	border-radius: $border-rds*3
+	margin-bottom: $margin/3
 
 .navLinks-active
 	transform: translateX(0)
 
 .input 
-	padding: 20px 0 20px 40px
+	padding: $padding*2 0 $padding*2 $padding*4
 	border: none
 	outline: none
 
@@ -113,13 +123,10 @@ a:hover
 	min-height: 100vh
 	position: relative
 	overflow: hidden 
-	&-nav 
-		display: flex
-		flex-flow: row wrap
-		justify-content: space-between
-		align-items: center
+	&-nav
 		height: 20%
 		transition: 1s ease
+		align-items: center
 		&__logo
 			img 
 				width: 50px
@@ -128,34 +135,32 @@ a:hover
 				animation: mover 1s infinite alternate
 			h3 
 				font-weight: bold
-				font-size: 32px
+				font-size: $fnt-sz*1.5
 				line-height: 48px
 				color: $color-blue
 		&__links 
 			margin-right: 55px
 			div 
-				margin: 0 30px 0 0
-				font-size: 20px
+				margin-right: $margin*3
+				font-size: $fnt-sz
 				line-height: 30px
 				color: $color-blue
 		&__buttons 
-			font-size: 20px
+			font-size: $fnt-sz
 			line-height: 30px
 			a 
-				margin-right: 50px
+				margin-right: $margin*5
 			&-item 
-				font-size: 20px
+				font-size: $fnt-sz
 				line-height: 30px
-	&-content 
-		display: flex
-		justify-content: space-between
+	&-content
 		min-height: 80%
 		&__text 
 			flex-basis: 50%
 			align-self: center
 			&-title 
 				font-weight: bold
-				font-size: 50px
+				font-size: $fnt-sz*2.5
 				line-height: 80px
 		&__images
 			align-self: flex-end
@@ -204,14 +209,14 @@ a:hover
 		&-nav 
 			&__links 
 				div 
-					margin: 0 10px 0 0
-					font-size: 18px
+					margin-top: 10px
+					font-size: $fnt-sz
 					line-height: 25px
 			&__buttons 
-				font-size: 18px
+				font-size: $fnt-sz
 				line-height: 25px
 				a 
-					margin-right: 10px
+					margin-right: $margin
 		&-content 
 			flex-flow: column nowrap
 			&__text 
@@ -240,76 +245,75 @@ a:hover
 				justify-content: space-between
 				flex-flow: column nowrap 
 				align-items: center
-				margin: 100px 0
+				margin: $margin*10 0
 			&__buttons 
 				display: flex
 				flex-flow: column nowrap
 				text-align: center
 				&_item 
-					margin-top: 10px
+					margin-top: $margin
 		.navLinks-active
 			transform: translateX(0)
+// HEADER /
+	
 
+// TRACK 
 .track 
-	margin-bottom: 150px
 	&-wrapper 
 		max-width: 80%
-		border-radius: 15px
+		border-radius: $border-rds*1.5
 		z-index: 100
 		background: #fff
-		padding: 35px 70px 70px 70px
+		padding: $padding*3.5 $padding*7 $padding*7 $padding*7
 		&__text 
 			font-weight: 400
-			font-size: 20px
+			font-size: $fnt-sz
 			color: $color-blue
 		&__title
 			font-weight: 700
-			font-size: 30px
+			font-size: $fnt-sz*1.5
 			color: $color-blue
 			margin: 0
 			padding: 0
-		&__form 
-			display: flex
+		&__form
 			.input 
 				flex-grow: 1
 	@media screen and (max-width: $size-md)
 		&-wrapper 
 			&__form 
 				flex-flow: column nowrap
+// TRACK /
 
 
+// SPECIAL 
 .special 
-	margin-bottom: 150px
 	transition: 1s ease
 	p, h5 
 		text-align: center
-	&-blocks 
-		display: flex
-		flex-flow: row wrap 
-		justify-content: space-between
+	&-blocks
 		&__item 
 			flex-basis: 18%
 			min-height: 300px
-			padding: 30px
+			padding: $padding*3
 			background: #F6F8FF
-			border-radius: 20px
+			border-radius: $border-rds*2
 			transition: 1s ease
 			position: relative
 			&-title 
 				font-weight: bold
-				font-size: 28px
+				font-size: $fnt-sz*1.5
 				line-height: 48px
 				color: $color-blue
 				margin: 0
 				padding: 0
 			&-img 
 				width: 50%
-				margin: 15px 0
+				margin: $margin*1.5 0
 				height: auto
 				animation: rotation 2s infinite
 			&-text 
 				font-weight: 700
-				font-size: 14px
+				font-size: $fnt-sz*0.75
 				line-height: 30px
 			&:hover 
 				background: #000
@@ -326,8 +330,8 @@ a:hover
 			justify-content: center
 			&__item 
 				flex-basis: 25%
-				margin-bottom: 15px
-				margin-right: 15px
+				margin-bottom: $margin*1.5
+				margin-right: $margin*1.5
 	@media screen and (max-width: $size-md)
 		&-blocks 
 			justify-content: space-around
@@ -338,16 +342,14 @@ a:hover
 			justify-content: center
 			&__item 
 				flex-basis: 80%
+// SPECIAL /
 
-.sell 
-	margin-bottom: 150px
-	&-wrapper
-		display: flex
-		justify-content: space-between
-		align-items: center
+
+// SELL
+.sell
 	&-content
 		.text 
-			margin-bottom: 25px
+			margin-bottom: $margin*2.5
 	&-img
 		position: relative
 		img 
@@ -379,49 +381,47 @@ a:hover
 			align-items: center
 			span
 				margin: 0 auto
+// SELL /
 
-.partner 
-	margin-bottom: 150px
+// PARTNER
+.partner
 	&-text 
 		text-align: center
 	&-blocks 
 		padding: 100px
 		background: #fff
-		display: flex
-		flex-flow: row wrap
-		justify-content: space-between
 		position: relative
 		img
 			max-width: 20%
 			height: auto
-	
+// PARTNER /
+
+
+// FOOTER 
 .footer 
-	padding: 75px 0 150px 0
+	padding: $padding*7.5 0 $padding*15 0
 	background-color: $color-blue
 	background-image: url('../img/dest/footer.png') no-repeat 
 	background-size: cover
-	&-wrapper 
-		display: flex
-		flex-flow: row wrap
-		justify-content: space-between
 	&-block
-		display: flex
-		flex-flow: column nowrap
 		&__title 
 			font-weight: bold
-			font-size: 27px
+			font-size: $fnt-sz*1.25
 			line-height: 40px
 			color: #FFFFFF
-			margin-bottom: 40px
-		&__links 
-			display: flex
-			flex-flow: column nowrap 
+			margin-bottom: $margin*4
+		&__links
 			&-item 
 				font-weight: 500
-				font-size: 18px
+				font-size: $fnt-sz
 				line-height: 37px
 				a 
 					color: #FFF !important
+
+// FOOTER /
+
+
+// ANIMATIONS
 
 @keyframes mover
 	0%
@@ -433,13 +433,5 @@ a:hover
 		transform: rotate(0)
 	100% 
 		transform: rotate(360deg)
-
-
-
-
-
-
-
-
-
-
+	
+// ANIMATIONS /
