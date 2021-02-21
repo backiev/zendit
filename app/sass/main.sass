@@ -299,6 +299,8 @@ a:hover
 			border-radius: $border-rds*2
 			transition: 1s ease
 			position: relative
+			.text 
+				color: $color-grey
 			&-title 
 				font-weight: bold
 				font-size: $fnt-sz*1.5
@@ -315,12 +317,13 @@ a:hover
 				font-weight: 700
 				font-size: $fnt-sz*0.75
 				line-height: 30px
-			&:hover 
-				background: #000
+			&:hover
 				background: #5F5FFE
 				box-shadow: 8px 8px 100px 10px rgba(0, 0, 0, 0.1)
-			&:hover > &-title, &-text
-				color: white 
+			&:hover > &-title
+				color: white
+			&:hover > &-text 
+				color: white
 	@media screen and (max-width: $size-xl)
 		&-blocks 
 			&__item 
