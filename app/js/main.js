@@ -7,6 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
          navRight.classList.toggle('navLinks-active');
          burger.classList.toggle('burger-right');
       });
+      document.addEventListener('click', (event) => {
+         if (navRight.classList[3] && event.target !== burger) {
+            navRight.classList.remove('navLinks-active');
+            burger.classList.remove('burger-right');
+         }
+         // console.log(navRight.classList[3]);
+      })
    }
    
    function parallaxEffect (event) {

@@ -23,7 +23,7 @@ body
 	margin: 0
 	padding: 0
 	font-family: 'Poppins', sans-serif
-	overflow-x: hidden
+	// overflow-x: hidden
 	background: #E5E5E5
 
 section 
@@ -53,6 +53,7 @@ section
 	color: $color-blue
 	transition: .5s ease
 	outline: none
+	cursor: pointer
 .button:hover
 	-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0)
 	box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0)
@@ -71,6 +72,9 @@ section
 	font-size: $fnt-sz
 	line-height: 45px
 	color: $color-grey
+	@media screen and (max-width: $size-sm)
+		font-size: $fnt-sz/1.25
+		line-height: 25px
 
 .title 
 	font-weight: bold
@@ -81,7 +85,8 @@ section
 	margin: $margin 0
 	padding: 0
 	@media screen and (max-width: $size-sm)
-		font-size: $fnt-sz*2
+		font-size: $fnt-sz*1.75
+		line-height: 45px
 
 .h-100 
 	min-height: 100%
@@ -91,7 +96,7 @@ section
 	display: none
 	transition: .3s ease
 .burger-right
-	margin-right: 40%
+	margin-right: 50%
 .burger div 
 	width: 25px 
 	height: 5px
@@ -240,6 +245,7 @@ a:hover
 				z-index: 10
 				transition: .3s ease
 				transform: translateX(100%)
+				padding: 0 30px
 			&__links 
 				height: 50%
 				justify-content: space-between
@@ -254,6 +260,11 @@ a:hover
 					margin-top: $margin
 		.navLinks-active
 			transform: translateX(0)
+	@media screen and (max-width: $size-sm)
+		&-content__text-title
+			font-size: 28px
+			line-height: 40px
+
 // HEADER /
 	
 
@@ -291,6 +302,7 @@ a:hover
 	p, h5 
 		text-align: center
 	&-blocks
+		flex-flow: row wrap
 		&__item 
 			flex-basis: 18%
 			min-height: 300px
@@ -339,12 +351,15 @@ a:hover
 		&-blocks 
 			justify-content: space-around
 			&__item 
-				flex-basis: 40%
+				flex-basis: 35%
 	@media screen and (max-width: $size-sm)
 		&-blocks 
 			justify-content: center
 			&__item 
 				flex-basis: 80%
+				display: flex
+				flex-flow: column nowrap
+				align-items: center
 // SPECIAL /
 
 
@@ -356,7 +371,7 @@ a:hover
 	&-img
 		position: relative
 		img 
-			max-width: 450px
+			max-width: 100%
 			height: auto
 		&__item 
 			position: absolute
@@ -406,6 +421,9 @@ a:hover
 	background-color: $color-blue
 	background-image: url('../img/dest/footer.png') no-repeat 
 	background-size: cover
+	&-wrapper
+		display: flex
+		flex-flow: row wrap
 	&-block
 		&__title 
 			font-weight: bold
